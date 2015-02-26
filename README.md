@@ -29,6 +29,6 @@ $ git push heroku master
 
 The following config vars are required:
  - `KEYWORDS`: a comma separated list of keywords to listen on
- - `SLACK_API_TOKEN`: Slack authentication token
+ - `SLACK_API_TOKEN`: Slack authentication token (get one at [https://synereo.slack.com/services/new/bot](https://synereo.slack.com/services/new/bot))
  - `SLACK_USERNAME`: Username for bot on Slack
  - `SLACK_CHANNEL`: Channel to post updates on Slack
