@@ -4,6 +4,7 @@
 
 import bs4
 import feedparser
+import os
 import requests
 import slack
 import slack.chat
@@ -11,16 +12,16 @@ import time
 import traceback
 import urllib.parse
 
-KEYWORDS = ['Storj', 'Storj Labs', 'SJCX', 'Storjcoin X', 'Storjcoin']
+KEYWORDS = os.environ.get('KEYWORDS').split(',')
 PING_TIME = 2  # how many seconds to wait between checking BitcoinTalk
 KEYWORD_FORMAT = '_*{}*_'  # markdown bold, {} is replaced
 MESSAGE_FORMAT = """Someone mentioned your organization on BitcoinTalk!
 Thread - {} / {}
 {}"""
 
-slack.api_token = '' # get one for your org. at api.slack.com
-SLACK_USERNAME = 'Bitcoin-Talk-Bot'
-SLACK_CHANNEL = '#general'
+slack.api_token = os.environ.get('SLACK_API_TOKEN')
+SLACK_USERNAME = os.environ.get('SLACK_USERNAME')
+SLACK_CHANNEL = os.environ.get('SLACK_CHANNEL')
 
 BITCOIN_TALK_RSS = 'https://bitcointalk.org/index.php?type=rss;action=.xml&limit=100'
 
