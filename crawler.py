@@ -15,9 +15,7 @@ import urllib.parse
 KEYWORDS = os.environ.get('KEYWORDS').split(',')
 PING_TIME = 2  # how many seconds to wait between checking BitcoinTalk
 KEYWORD_FORMAT = '_*{}*_'  # markdown bold, {} is replaced
-MESSAGE_FORMAT = """Someone mentioned your organization on BitcoinTalk!
-Thread - {} / {}
-{}"""
+MESSAGE_FORMAT = '{}\n{}\n{}'
 
 slack.api_token = os.environ.get('SLACK_API_TOKEN')
 SLACK_USERNAME = os.environ.get('SLACK_USERNAME')
