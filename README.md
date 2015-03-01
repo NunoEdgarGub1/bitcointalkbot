@@ -23,6 +23,7 @@ Push the app to Heroku:
 ```bash
 $ heroku create my-application-name
 $ git push heroku master
+$ heroku ps:scale bot=1
 ```
 
 ### Configuration
